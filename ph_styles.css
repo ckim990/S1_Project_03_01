@@ -1,19 +1,24 @@
 @charset "utf-8";
+/* I used the font face face descriptor to add external fonts
+via .woff files and .ttf files for each.  */
 @font-face {
     font-family: Champagne;
     src: url('cac_champagne.woff') format('woff');
     src: url('cac_champagne.ttf') format('truetype');
 }
+
 @font-face {
     font-family: Grunge;
     src: url('1942.woff') format('woff');
     src: url('1942.ttf') format('truetype');
 }
+
 @font-face {
     font-family: Dobkin;
     src: url('DobkinPlain.woff') format('woff');
     src: url('DobkinPlain.ttf') format('truetype');
 }
+
 /*
    New Perspectives on HTML5 and CSS3, 7th Edition
    Tutorial 2
@@ -26,35 +31,36 @@
    Filename: ph_styles.css
 
 */
-
-
 /* Structural Styles */
+/* Using the html selector I can color the background of the 
+page. */
 html {
     background-color: hsl(91, 8%, 56%);
 }
-
+/* I also colored the background color of the body to overlap the
+html one. */
 body {
     background-color: hsl(58, 31%, 84%);
     font-family: ‘Palatino Linotype’, ‘Book Antiqua’, Palatino, serif;
 }
-
+/* The top of the page is also colored, but this time its colored black. */
 header {
     background-color: black;
 }
-
+/* In this section I set the margine and padding to a certain pixel amount. */
 p {
-   margin: 0px;
-   padding-top: 5px;
-   padding-right: 25px; 
-   padding-bottom: 25px; 
-   padding-left: 25px;
+    margin: 0px;
+    padding-top: 5px;
+    padding-right: 25px;
+    padding-bottom: 25px;
+    padding-left: 25px;
 }
-
-body > p {
+/* In here we use the > sign because I need the direct paragraph decendants of the body element*/
+body>p {
     font-size: 1.1em;
     text-align: center;
 }
-
+/* In the adress element I determine the font size, text align, and padding space for the top. */
 address {
     font-size: 0.9em;
     text-align: center;
@@ -63,32 +69,78 @@ address {
 }
 
 /* Navigation Styles */
-nav a{
-    font-family: ‘Trebuchet MS’, Helvetica, sans-serif;
+/* I use the nav a because I need to add padding and fonts to the anchor elements nested in the nav elements. */
+nav a {
     padding-top: 10px;
     padding-bottom: 10px;
+    font-family: ‘Trebuchet MS’, Helvetica, sans-serif;
 }
+/* I used pseudo elements to color the visited hypertext links. */
 nav a:link,
 nav a:visited {
     color: white;
     text-decoration: none;
     background-color: hsla(0, 0%, 42%, 0.4);
 }
-
-nav a:active,
-nav a:hover{
+/* I used pseudo elements to also color the hovered hypertext links. */
+nav a:hover,
+nav a:active {
     color: hsla(0, 0%, 100%, 0.7);
     background-color: hsl(0, 0%, 42%, 0.7);
 }
 
-
-
 /* Section Styles */
-section.playbill h1{
-    
+/* I change the font size and weight of the h1 elements that are in the playbill class.
+I also edit the margins and padding space. */
+section.playbill h1 {
+    font-size: 3em;
+    font-weight: normal;
+    margin: 0px;
+    padding: 20px 0px 10px 20px;
+}
+/* In this section I color and add fonts to the section with their specific id's. */
+section#play1 {
+    background-color: hsl(240, 100%, 88%);
 }
 
+section#play1 h1 {
+    font-family: Champagne, cursive;
+}
 
+section#play2 {
+    background-color: hsl(25, 88%, 73%);
+}
+
+section#play2 h1 {
+    font-family: Grunge, ‘Times New Roman’, Times, serif;
+}
+
+section#play3 {
+    background-color: hsl(0, 100%, 75%);
+}
+
+section#play3 h1 {
+    font-family: Impact, Charcoal, sans-serif;
+}
+
+section#play4 {
+    background-color: hsl(296, 86%, 86%);
+}
+
+section#play4 h1 {
+    font-family: Dobkin, cursive;
+}
 
 /* Description List Styles */
+/* In the last section I add margin rules; I edit the font size, weight, and color. */
+dt {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: hsla(0, 0%, 0%, 0.4);
+}
 
+dd {
+    font-size: 1.3em;
+    margin-left: 0px;
+    margin-bottom: 10px;
+}
